@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ConLine" Class="SurveysDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=ConLine;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConLineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Surveys" Member="Surveys">
+    <Type Name="Surveys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Surveys_SurveyQuestions" Member="SurveyQuestions" ThisKey="Code" OtherKey="SurveyCode" Type="SurveyQuestions" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SurveyQuestions" Member="SurveyQuestions">
+    <Type Name="SurveyQuestions">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SurveyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Association Name="Surveys_SurveyQuestions" Member="Surveys" ThisKey="SurveyCode" OtherKey="Code" Type="Surveys" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vSurveys" Member="vSurveys">
+    <Type Name="vSurveys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vSurveyQuestions" Member="vSurveyQuestions">
+    <Type Name="vSurveyQuestions">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SurveyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

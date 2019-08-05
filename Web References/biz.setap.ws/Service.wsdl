@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSendPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerCityCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSendPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSendPriceResult" type="tns:SendPriceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendPriceResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ArrayOf_Error" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSendPricePishtaz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSendPriceSefareshi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KhadamatPrice" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOf_Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="_Error" nillable="true" type="tns:_Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="_Error">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerOstanCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ByuerAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerMobTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderItems" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PakatWeight" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNewOrderResult" type="tns:InsertOrderResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InsertOrderResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ArrayOf_Error" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertNewOrder_NewVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerOstanCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ByuerAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerMobTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderItems" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PakatWeight" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PayType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Massage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Raygani" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewOrder_NewVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNewOrder_NewVersionResult" type="tns:InsertOrderResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderStatusResult" type="tns:OrderStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderStatusResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ArrayOf_Error" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderStatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderStatusTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderRegisterDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderLastUpdateDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGoodLinkSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGoodSellerCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGoodLinkSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGoodLinkSaleResult" type="tns:ArrayOf_Return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOf_Return">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="_Return" nillable="true" type="tns:_Return" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="_Return">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateOrderStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GroupOrderCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderStatusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderStatusResult" type="tns:ArrayOfOrderChangeStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrderChangeStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderChangeStatus" nillable="true" type="tns:OrderChangeStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderChangeStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strOrderCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOldOrderStatusTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNewOrderStatusTitle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RetCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RetMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ArrayOf_Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertNewGood">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGoodSellerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGoodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numGoodPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numGoodWeight" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numGoodCategoryRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numPercent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewGoodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNewGoodResult" type="tns:ArrayOf_Return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterOrderFor5040">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleRoomCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRoomPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SarListCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerTell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OstanCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyerAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GoodString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterOrderFor5040Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterOrderFor5040Result" type="tns:ArrayOf_Return" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPriceResult" nillable="true" type="tns:SendPriceResult" />
+      <s:element name="InsertOrderResult" nillable="true" type="tns:InsertOrderResult" />
+      <s:element name="OrderStatusResult" nillable="true" type="tns:OrderStatusResult" />
+      <s:element name="ArrayOf_Return" nillable="true" type="tns:ArrayOf_Return" />
+      <s:element name="ArrayOfOrderChangeStatus" nillable="true" type="tns:ArrayOfOrderChangeStatus" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSendPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSendPrice" />
+  </wsdl:message>
+  <wsdl:message name="GetSendPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSendPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewOrder_NewVersion" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewOrder_NewVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGoodLinkSale" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGoodLinkSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewGood" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewGoodResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040SoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterOrderFor5040" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040SoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterOrderFor5040Response" />
+  </wsdl:message>
+  <wsdl:message name="GetSendPriceHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+    <wsdl:part name="OrderPrice" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSendPriceHttpGetOut">
+    <wsdl:part name="Body" element="tns:SendPriceResult" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerOstanCode" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+    <wsdl:part name="BuyerPostalCode" type="s:string" />
+    <wsdl:part name="ByuerAddress" type="s:string" />
+    <wsdl:part name="BuyerTel" type="s:string" />
+    <wsdl:part name="BuyerMobTel" type="s:string" />
+    <wsdl:part name="BuyerEmail" type="s:string" />
+    <wsdl:part name="PostServiceCode" type="s:string" />
+    <wsdl:part name="strDescription" type="s:string" />
+    <wsdl:part name="OrderItems" type="s:string" />
+    <wsdl:part name="PakatWeight" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:InsertOrderResult" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerOstanCode" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+    <wsdl:part name="BuyerPostalCode" type="s:string" />
+    <wsdl:part name="ByuerAddress" type="s:string" />
+    <wsdl:part name="BuyerTel" type="s:string" />
+    <wsdl:part name="BuyerMobTel" type="s:string" />
+    <wsdl:part name="BuyerEmail" type="s:string" />
+    <wsdl:part name="PostServiceCode" type="s:string" />
+    <wsdl:part name="strDescription" type="s:string" />
+    <wsdl:part name="OrderItems" type="s:string" />
+    <wsdl:part name="PakatWeight" type="s:string" />
+    <wsdl:part name="Ticket" type="s:string" />
+    <wsdl:part name="PayType" type="s:string" />
+    <wsdl:part name="Massage" type="s:string" />
+    <wsdl:part name="Raygani" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:InsertOrderResult" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="OrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:OrderStatusResult" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="strGoodSellerCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="GroupOrderCode" type="s:string" />
+    <wsdl:part name="OrderStatusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderChangeStatus" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodHttpGetIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="strGoodSellerCode" type="s:string" />
+    <wsdl:part name="strGoodName" type="s:string" />
+    <wsdl:part name="numGoodPrice" type="s:string" />
+    <wsdl:part name="numGoodWeight" type="s:string" />
+    <wsdl:part name="numGoodCategoryRef" type="s:string" />
+    <wsdl:part name="numPercent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040HttpGetIn">
+    <wsdl:part name="SaleRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="SarListCode" type="s:string" />
+    <wsdl:part name="Serial" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerMobile" type="s:string" />
+    <wsdl:part name="BuyerTell" type="s:string" />
+    <wsdl:part name="OstanCode" type="s:string" />
+    <wsdl:part name="CityCode" type="s:string" />
+    <wsdl:part name="BuyerAddress" type="s:string" />
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="TotalPrice" type="s:string" />
+    <wsdl:part name="GoodString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:message name="GetSendPriceHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="Weight" type="s:string" />
+    <wsdl:part name="OrderPrice" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSendPriceHttpPostOut">
+    <wsdl:part name="Body" element="tns:SendPriceResult" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerOstanCode" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+    <wsdl:part name="BuyerPostalCode" type="s:string" />
+    <wsdl:part name="ByuerAddress" type="s:string" />
+    <wsdl:part name="BuyerTel" type="s:string" />
+    <wsdl:part name="BuyerMobTel" type="s:string" />
+    <wsdl:part name="BuyerEmail" type="s:string" />
+    <wsdl:part name="PostServiceCode" type="s:string" />
+    <wsdl:part name="strDescription" type="s:string" />
+    <wsdl:part name="OrderItems" type="s:string" />
+    <wsdl:part name="PakatWeight" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:InsertOrderResult" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerOstanCode" type="s:string" />
+    <wsdl:part name="BuyerCityCode" type="s:string" />
+    <wsdl:part name="BuyerPostalCode" type="s:string" />
+    <wsdl:part name="ByuerAddress" type="s:string" />
+    <wsdl:part name="BuyerTel" type="s:string" />
+    <wsdl:part name="BuyerMobTel" type="s:string" />
+    <wsdl:part name="BuyerEmail" type="s:string" />
+    <wsdl:part name="PostServiceCode" type="s:string" />
+    <wsdl:part name="strDescription" type="s:string" />
+    <wsdl:part name="OrderItems" type="s:string" />
+    <wsdl:part name="PakatWeight" type="s:string" />
+    <wsdl:part name="Ticket" type="s:string" />
+    <wsdl:part name="PayType" type="s:string" />
+    <wsdl:part name="Massage" type="s:string" />
+    <wsdl:part name="Raygani" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewOrder_NewVersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:InsertOrderResult" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="OrderCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:OrderStatusResult" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="strGoodSellerCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGoodLinkSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="GroupOrderCode" type="s:string" />
+    <wsdl:part name="OrderStatusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrderChangeStatus" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodHttpPostIn">
+    <wsdl:part name="SalesRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="strGoodSellerCode" type="s:string" />
+    <wsdl:part name="strGoodName" type="s:string" />
+    <wsdl:part name="numGoodPrice" type="s:string" />
+    <wsdl:part name="numGoodWeight" type="s:string" />
+    <wsdl:part name="numGoodCategoryRef" type="s:string" />
+    <wsdl:part name="numPercent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewGoodHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040HttpPostIn">
+    <wsdl:part name="SaleRoomCode" type="s:string" />
+    <wsdl:part name="SalesRoomUserName" type="s:string" />
+    <wsdl:part name="SalesRoomPassword" type="s:string" />
+    <wsdl:part name="SarListCode" type="s:string" />
+    <wsdl:part name="Serial" type="s:string" />
+    <wsdl:part name="BuyerName" type="s:string" />
+    <wsdl:part name="BuyerMobile" type="s:string" />
+    <wsdl:part name="BuyerTell" type="s:string" />
+    <wsdl:part name="OstanCode" type="s:string" />
+    <wsdl:part name="CityCode" type="s:string" />
+    <wsdl:part name="BuyerAddress" type="s:string" />
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="TotalPrice" type="s:string" />
+    <wsdl:part name="GoodString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterOrderFor5040HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOf_Return" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetSendPrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">دریافت هزینه ارسال</wsdl:documentation>
+      <wsdl:input message="tns:GetSendPriceSoapIn" />
+      <wsdl:output message="tns:GetSendPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrderSoapIn" />
+      <wsdl:output message="tns:InsertNewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrder_NewVersionSoapIn" />
+      <wsdl:output message="tns:InsertNewOrder_NewVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">رهگیری سفارش </wsdl:documentation>
+      <wsdl:input message="tns:GetOrderStatusSoapIn" />
+      <wsdl:output message="tns:GetOrderStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> دریافت لینک خرید محصول</wsdl:documentation>
+      <wsdl:input message="tns:GetGoodLinkSaleSoapIn" />
+      <wsdl:output message="tns:GetGoodLinkSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> تغییر وضعیت سفارش &lt;br /&gt;  شناسه ها را با کاما(,)از هم جدا کنید&lt;br /&gt; 1 &gt;&gt; معلق&lt;br /&gt; 2 &gt;&gt; اماده به ارسال&lt;br /&gt; 6 &gt;&gt; انصرافی</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderStatusSoapIn" />
+      <wsdl:output message="tns:UpdateOrderStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> ثبت محصول جدید &lt;br /&gt; کد محصول = کد فروشگاه + کد وارد شده توسط شما</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewGoodSoapIn" />
+      <wsdl:output message="tns:InsertNewGoodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <wsdl:input message="tns:RegisterOrderFor5040SoapIn" />
+      <wsdl:output message="tns:RegisterOrderFor5040SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="GetSendPrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">دریافت هزینه ارسال</wsdl:documentation>
+      <wsdl:input message="tns:GetSendPriceHttpGetIn" />
+      <wsdl:output message="tns:GetSendPriceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrderHttpGetIn" />
+      <wsdl:output message="tns:InsertNewOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrder_NewVersionHttpGetIn" />
+      <wsdl:output message="tns:InsertNewOrder_NewVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">رهگیری سفارش </wsdl:documentation>
+      <wsdl:input message="tns:GetOrderStatusHttpGetIn" />
+      <wsdl:output message="tns:GetOrderStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> دریافت لینک خرید محصول</wsdl:documentation>
+      <wsdl:input message="tns:GetGoodLinkSaleHttpGetIn" />
+      <wsdl:output message="tns:GetGoodLinkSaleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> تغییر وضعیت سفارش &lt;br /&gt;  شناسه ها را با کاما(,)از هم جدا کنید&lt;br /&gt; 1 &gt;&gt; معلق&lt;br /&gt; 2 &gt;&gt; اماده به ارسال&lt;br /&gt; 6 &gt;&gt; انصرافی</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderStatusHttpGetIn" />
+      <wsdl:output message="tns:UpdateOrderStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> ثبت محصول جدید &lt;br /&gt; کد محصول = کد فروشگاه + کد وارد شده توسط شما</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewGoodHttpGetIn" />
+      <wsdl:output message="tns:InsertNewGoodHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <wsdl:input message="tns:RegisterOrderFor5040HttpGetIn" />
+      <wsdl:output message="tns:RegisterOrderFor5040HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="GetSendPrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">دریافت هزینه ارسال</wsdl:documentation>
+      <wsdl:input message="tns:GetSendPriceHttpPostIn" />
+      <wsdl:output message="tns:GetSendPriceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrderHttpPostIn" />
+      <wsdl:output message="tns:InsertNewOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ثبت سفارش و دریافت شناسه  &lt;br /&gt; دقت کنید در مبلغ 1 کالا نباید از کاما استفاده کنید</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewOrder_NewVersionHttpPostIn" />
+      <wsdl:output message="tns:InsertNewOrder_NewVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">رهگیری سفارش </wsdl:documentation>
+      <wsdl:input message="tns:GetOrderStatusHttpPostIn" />
+      <wsdl:output message="tns:GetOrderStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> دریافت لینک خرید محصول</wsdl:documentation>
+      <wsdl:input message="tns:GetGoodLinkSaleHttpPostIn" />
+      <wsdl:output message="tns:GetGoodLinkSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> تغییر وضعیت سفارش &lt;br /&gt;  شناسه ها را با کاما(,)از هم جدا کنید&lt;br /&gt; 1 &gt;&gt; معلق&lt;br /&gt; 2 &gt;&gt; اماده به ارسال&lt;br /&gt; 6 &gt;&gt; انصرافی</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderStatusHttpPostIn" />
+      <wsdl:output message="tns:UpdateOrderStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> ثبت محصول جدید &lt;br /&gt; کد محصول = کد فروشگاه + کد وارد شده توسط شما</wsdl:documentation>
+      <wsdl:input message="tns:InsertNewGoodHttpPostIn" />
+      <wsdl:output message="tns:InsertNewGoodHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <wsdl:input message="tns:RegisterOrderFor5040HttpPostIn" />
+      <wsdl:output message="tns:RegisterOrderFor5040HttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSendPrice">
+      <soap:operation soapAction="http://tempuri.org/GetSendPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <soap:operation soapAction="http://tempuri.org/InsertNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <soap:operation soapAction="http://tempuri.org/InsertNewOrder_NewVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/GetOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <soap:operation soapAction="http://tempuri.org/GetGoodLinkSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <soap:operation soapAction="http://tempuri.org/InsertNewGood" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <soap:operation soapAction="http://tempuri.org/RegisterOrderFor5040" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSendPrice">
+      <soap12:operation soapAction="http://tempuri.org/GetSendPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewOrder_NewVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <soap12:operation soapAction="http://tempuri.org/GetGoodLinkSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewGood" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <soap12:operation soapAction="http://tempuri.org/RegisterOrderFor5040" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetSendPrice">
+      <http:operation location="/GetSendPrice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <http:operation location="/InsertNewOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <http:operation location="/InsertNewOrder_NewVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <http:operation location="/GetOrderStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <http:operation location="/GetGoodLinkSale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <http:operation location="/UpdateOrderStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <http:operation location="/InsertNewGood" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <http:operation location="/RegisterOrderFor5040" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetSendPrice">
+      <http:operation location="/GetSendPrice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder">
+      <http:operation location="/InsertNewOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewOrder_NewVersion">
+      <http:operation location="/InsertNewOrder_NewVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <http:operation location="/GetOrderStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGoodLinkSale">
+      <http:operation location="/GetGoodLinkSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <http:operation location="/UpdateOrderStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewGood">
+      <http:operation location="/InsertNewGood" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOrderFor5040">
+      <http:operation location="/RegisterOrderFor5040" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://ws.setap.biz/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://ws.setap.biz/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://ws.setap.biz/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://ws.setap.biz/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

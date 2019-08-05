@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using ConLine.Old_App_Code.DAL;
+
+/// <summary>
+/// Summary description for BOLUserRefPages
+/// </summary>
+public class BOLUserRefPages
+{
+	public BOLUserRefPages()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+    public bool IsValidClick(int UserCode, string RefIP)
+    {
+        RefPagesDataContext dc = new RefPagesDataContext();
+        var LastReqResult  = dc.RefPages.Where( p=> p.UserCode.Equals(UserCode) && p.RefIP.Equals(RefIP)).OrderByDescending(p=> p.Code).Take(1);//.GetEnumerator().Current ;
+        if (LastReqResult.Count() == 0)
+            return true;
+        else
+        {
+            foreach (var item in LastReqResult)
+            {
+                if (item.RefDate.Value.AddDays(30).CompareTo(Tools.GetIranDate()) < 0)
+                    return true;
+                else
+                    return false;
+                
+            }
+            return false;
+        }
+
+    }
+
+    public void Insert(int UserCode, string Referrer, string RefIP)
+    {
+        RefPages NewRefPage = new RefPages();
+        RefPagesDataContext dc = new RefPagesDataContext();
+        dc.RefPages.InsertOnSubmit(NewRefPage);
+        NewRefPage.UserCode = UserCode;
+        NewRefPage.RefDate = Tools.GetIranDate();
+        NewRefPage.Referrer = Referrer;
+        NewRefPage.RefIP = RefIP;
+        dc.SubmitChanges();
+    }
+}

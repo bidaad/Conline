@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ConLine" Class="AccessLevelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=ConLine;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConLineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vResources" Member="vResources">
+    <Type Name="vResources">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EngName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="BaseID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MasterCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vGroupResources" Member="vGroupResources">
+    <Type Name="vGroupResources">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ResourceCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAccessGroups" Member="vAccessGroups">
+    <Type Name="vAccessGroups">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LevelName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserGroups" Member="vUserGroups">
+    <Type Name="vUserGroups">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IGroupCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ForgotPasswords" Member="ForgotPasswords">
+    <Type Name="ForgotPasswords">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GenKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GenTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Used" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vForgotPasswords" Member="vForgotPasswords">
+    <Type Name="vForgotPasswords">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GenKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GenTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Used" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vValidForgotPasswords" Member="vValidForgotPasswords">
+    <Type Name="vValidForgotPasswords">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GenKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GenTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Used" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resources" Member="Resources">
+    <Type Name="Resources">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EngName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TypeCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MasterCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditPath" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BaseID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BasicAccessType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserGroups" Member="UserGroups">
+    <Type Name="UserGroups">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Users_UserGroups" Member="Users" ThisKey="UserCode" OtherKey="Code" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupResources" Member="GroupResources">
+    <Type Name="GroupResources">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessGroups" Member="AccessGroups">
+    <Type Name="AccessGroups">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserAccess" Member="vUserAccesses">
+    <Type Name="vUserAccess">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AccessType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TypeCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUsers" Member="vUsers">
+    <Type Name="vUsers">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Activity" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserBuys" Member="vUserBuys">
+    <Type Name="vUserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vGuestUserBuys" Member="GuestUserBuys">
+    <Type Name="GuestUserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vLoggedUserBuys" Member="LoggedUserBuys">
+    <Type Name="LoggedUserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vGuestUserBuys" Member="vGuestUserBuys">
+    <Type Name="vGuestUserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vLoggedUserBuys" Member="vLoggedUserBuys">
+    <Type Name="vLoggedUserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBuys" Member="UserBuys">
+    <Type Name="UserBuys">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransactionCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RefUserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserBuys_UserBuyProducts" Member="UserBuyProducts" ThisKey="Code" OtherKey="BuyCode" Type="UserBuyProducts" />
+      <Association Name="UserBuys_UserRefPages" Member="UserRefPages" ThisKey="Code" OtherKey="BuyCode" Type="UserRefPages" />
+      <Association Name="UserTransactions_UserBuys" Member="UserTransactions" ThisKey="TransactionCode" OtherKey="Code" Type="UserTransactions" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserBuyProducts" Member="vUserBuyProducts">
+    <Type Name="vUserBuyProducts">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuyCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Porsant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBuyProducts" Member="UserBuyProducts">
+    <Type Name="UserBuyProducts">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuyCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Porsant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserBuys_UserBuyProducts" Member="UserBuys" ThisKey="BuyCode" OtherKey="Code" Type="UserBuys" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRefPages" Member="UserRefPages">
+    <Type Name="UserRefPages">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Referrer" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RefDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RefIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalProductPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPorsant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuyCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserBuys_UserRefPages" Member="UserBuys" ThisKey="BuyCode" OtherKey="Code" Type="UserBuys" IsForeignKey="true" />
+      <Association Name="Users_UserRefPages" Member="Users" ThisKey="UserCode" OtherKey="Code" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserRefPages" Member="vUserRefPages">
+    <Type Name="vUserRefPages">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RefUser" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalProductPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPorsant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuyDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Referrer" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RefIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserRefReport" Member="vUserRefReports">
+    <Type Name="vUserRefReport">
+      <Column Name="ClickCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SumPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SumProsant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserOrders" Member="vUserOrders">
+    <Type Name="vUserOrders">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransStatuse" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HCOrderStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserOrders" Member="UserOrders">
+    <Type Name="UserOrders">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfirmDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AutoLogin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PicFile" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HCGenderCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AccountBalance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoginTimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HCAccountBankNameCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Users_UserGroups" Member="UserGroups" ThisKey="Code" OtherKey="UserCode" Type="UserGroups" />
+      <Association Name="Users_UserRefPages" Member="UserRefPages" ThisKey="Code" OtherKey="UserCode" Type="UserRefPages" />
+      <Association Name="Users_UserAddresses" Member="UserAddresses" ThisKey="Code" OtherKey="UserCode" Type="UserAddresses" />
+      <Association Name="Users_UserTransactions" Member="UserTransactions" ThisKey="Code" OtherKey="UserCode" Type="UserTransactions" />
+      <Association Name="Users_UserCoupons" Member="UserCoupons" ThisKey="Code" OtherKey="UserCode" Type="UserCoupons" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAddresses" Member="UserAddresses">
+    <Type Name="UserAddresses">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProvinceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Users_UserAddresses" Member="Users" ThisKey="UserCode" OtherKey="Code" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserAddresses" Member="vUserAddresses">
+    <Type Name="vUserAddresses">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProvinceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserFavorites" Member="UserFavorites">
+    <Type Name="UserFavorites">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTransactions" Member="UserTransactions">
+    <Type Name="UserTransactions">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HCPayMethodCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HCPayReasonCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DigitalSignature" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BankState" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FishNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Authority" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MellatRefID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RelatedTransCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BMIRequestKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="UserTransactions_UserBuys" Member="UserBuys" ThisKey="Code" OtherKey="TransactionCode" Type="UserBuys" />
+      <Association Name="Users_UserTransactions" Member="Users" ThisKey="UserCode" OtherKey="Code" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserFavorites" Member="vUserFavorites">
+    <Type Name="vUserFavorites">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FaTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCoupons" Member="UserCoupons">
+    <Type Name="UserCoupons">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CouponCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Users_UserCoupons" Member="Users" ThisKey="UserCode" OtherKey="Code" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserCoupons" Member="vUserCoupons">
+    <Type Name="vUserCoupons">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CouponType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vUserTransactions" Member="vUserTransactions">
+    <Type Name="vUserTransactions">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TransStatus" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChrgDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DigitalSignature" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Authority" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HCTransStatusCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MellatRefID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HCGenderCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_GetMultipleAccess" Method="sp_GetMultipleAccess">
+    <Parameter Name="paramAccessTypeCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paramGroupCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paramMasterCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetMultipleAccessResult">
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fnGetUserBalance" Method="fnGetUserBalance" IsComposable="true">
+    <Parameter Name="UserCode" Parameter="userCode" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

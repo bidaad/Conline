@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Parset">
+  <DataContextMoniker Name="/ParsetDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a19f91c8-bd55-43e1-85f8-8bc6afb2b3bc" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ParsetDataContext/vMediaNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72c1b74b-0f8e-47cd-bc3b-f426c3527138" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92ec7632-33f1-4854-b847-b071e4262722" absoluteBounds="0.5, 2.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/ParsetDataContext/vNewsDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20b306b0-6712-4287-9d8b-9950a98a3073" absoluteBounds="0.51499999999999968, 2.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

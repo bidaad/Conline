@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Surveys">
+  <DataContextMoniker Name="/SurveysDataContext" />
+  <nestedChildShapes>
+    <classShape Id="51b07b50-866c-4e8d-9a58-3f4a2f90c53a" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SurveysDataContext/Surveys" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4138b54-1d84-44c4-a83d-cce1cebdff5d" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ce72ccb-6662-425f-8caf-18d92e3c74a8" absoluteBounds="3.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SurveysDataContext/SurveyQuestions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5aeba0d1-6b90-4742-8cda-cb658a5dc72a" absoluteBounds="3.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d2213c1-e170-4fe2-8b7e-64d755a00a4a" isExpanded="false" absoluteBounds="0.5, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/SurveysDataContext/vSurveys" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67007a4f-32a4-4d4a-a10e-47ae827eca6f" absoluteBounds="0.515, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5a5badf-fa10-4954-ae29-e5fef0e2e652" isExpanded="false" absoluteBounds="3.5, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/SurveysDataContext/vSurveyQuestions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="162fb785-0342-477e-8299-0608b4eb714f" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.19314697265625); (3.5 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SurveysDataContext/Surveys/Surveys_SurveyQuestions" />
+      <nodes>
+        <classShapeMoniker Id="51b07b50-866c-4e8d-9a58-3f4a2f90c53a" />
+        <classShapeMoniker Id="8ce72ccb-6662-425f-8caf-18d92e3c74a8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

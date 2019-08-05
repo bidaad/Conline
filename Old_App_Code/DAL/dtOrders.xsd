@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtOrders" targetNamespace="http://tempuri.org/dtOrders.xsd" xmlns:mstns="http://tempuri.org/dtOrders.xsd" xmlns="http://tempuri.org/dtOrders.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConLineConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConLineConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConLineConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vOrderProductsTableAdapter" GeneratorDataComponentClassName="vOrderProductsTableAdapter" Name="vOrderProducts" UserDataComponentName="vOrderProductsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConLineConnectionString (Web.config)" DbObjectName="ConLine.dbo.vOrderProducts" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Code, OrderCode, ProductName, ProductStatus, Weight, ProductPrice, ItemCount FROM dbo.vOrderProducts</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+              <Mapping SourceColumn="OrderCode" DataSetColumn="OrderCode" />
+              <Mapping SourceColumn="ProductName" DataSetColumn="ProductName" />
+              <Mapping SourceColumn="ProductStatus" DataSetColumn="ProductStatus" />
+              <Mapping SourceColumn="Weight" DataSetColumn="Weight" />
+              <Mapping SourceColumn="ProductPrice" DataSetColumn="ProductPrice" />
+              <Mapping SourceColumn="ItemCount" DataSetColumn="ItemCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtOrders" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtOrders" msprop:Generator_UserDSName="dtOrders">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vOrderProducts" msprop:Generator_TableClassName="vOrderProductsDataTable" msprop:Generator_TableVarName="tablevOrderProducts" msprop:Generator_TablePropName="vOrderProducts" msprop:Generator_RowDeletingName="vOrderProductsRowDeleting" msprop:Generator_RowChangingName="vOrderProductsRowChanging" msprop:Generator_RowEvHandlerName="vOrderProductsRowChangeEventHandler" msprop:Generator_RowDeletedName="vOrderProductsRowDeleted" msprop:Generator_UserTableName="vOrderProducts" msprop:Generator_RowChangedName="vOrderProductsRowChanged" msprop:Generator_RowEvArgName="vOrderProductsRowChangeEvent" msprop:Generator_RowClassName="vOrderProductsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:int" />
+              <xs:element name="OrderCode" msprop:Generator_ColumnVarNameInTable="columnOrderCode" msprop:Generator_ColumnPropNameInRow="OrderCode" msprop:Generator_ColumnPropNameInTable="OrderCodeColumn" msprop:Generator_UserColumnName="OrderCode" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductStatus" msprop:Generator_ColumnVarNameInTable="columnProductStatus" msprop:Generator_ColumnPropNameInRow="ProductStatus" msprop:Generator_ColumnPropNameInTable="ProductStatusColumn" msprop:Generator_UserColumnName="ProductStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Weight" msprop:Generator_ColumnVarNameInTable="columnWeight" msprop:Generator_ColumnPropNameInRow="Weight" msprop:Generator_ColumnPropNameInTable="WeightColumn" msprop:Generator_UserColumnName="Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductPrice" msprop:Generator_ColumnVarNameInTable="columnProductPrice" msprop:Generator_ColumnPropNameInRow="ProductPrice" msprop:Generator_ColumnPropNameInTable="ProductPriceColumn" msprop:Generator_UserColumnName="ProductPrice" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemCount" msprop:Generator_ColumnVarNameInTable="columnItemCount" msprop:Generator_ColumnPropNameInRow="ItemCount" msprop:Generator_ColumnPropNameInTable="ItemCountColumn" msprop:Generator_UserColumnName="ItemCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vOrderProducts" />
+      <xs:field xpath="mstns:Code" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Orders">
+  <DataContextMoniker Name="/OrdersDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3088ec96-b7ed-40ca-9641-a39613536948" absoluteBounds="3.25, 4.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/OrdersDataContext/vUserOrderProducts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89d4d955-1aaf-46d7-a68a-4e65c7149e64" absoluteBounds="3.2649999999999997, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1af2fae4-3b1a-4a37-9985-8b7b3633667a" absoluteBounds="0.5, 0.5, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/OrdersDataContext/Orders" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0febf2c9-7e45-4a96-a5e6-fbb8e6eaa9cb" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ace746d-6607-4d5b-b005-f29c9be5c685" absoluteBounds="3.25, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/OrdersDataContext/OrderProducts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03ca2162-3aa8-49fe-b07a-52e259b16c15" absoluteBounds="3.2649999999999997, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.67390055338542); (3.25 : 1.67390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/OrdersDataContext/Orders/Orders_OrderProducts" />
+      <nodes>
+        <classShapeMoniker Id="1af2fae4-3b1a-4a37-9985-8b7b3633667a" />
+        <classShapeMoniker Id="2ace746d-6607-4d5b-b005-f29c9be5c685" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9ab031e3-6ebd-4571-9fde-ae599d18a83c" isExpanded="false" absoluteBounds="0.5, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/OrdersDataContext/vOrders" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67b1fe4f-6110-4d84-bddf-8436ed61442f" absoluteBounds="0.51499999999999968, 7.335, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9cae5d8-ab40-442d-bdac-8e5e56336e11" isExpanded="false" absoluteBounds="3.25, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/OrdersDataContext/vOrderProducts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d4cc5a9-26f1-48e1-a49a-72099450b209" absoluteBounds="3.2649999999999997, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
